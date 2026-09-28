@@ -43,7 +43,7 @@ Higgsfield was never logged in; no AI-video beats exist in this reel.
 
 ## What Claude contributed
 
-Model: Claude Opus 5, via Claude Code, on 2026-09-21. One session.
+Model: Claude Opus 5, via Claude Code. Two sessions: 2026-09-21 (build) and 2026-09-27 (submission check against the Canvas page).
 
 **Wrote most of the code I specified.** The Python and Manim in this folder was
 largely typed by Claude against my design decisions — scene layouts, the

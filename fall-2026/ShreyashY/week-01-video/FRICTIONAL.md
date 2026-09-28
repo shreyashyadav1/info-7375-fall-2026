@@ -1,10 +1,13 @@
 # FRICTIONAL.md — Week 1 explainer video
 
-Shreyash Yadav · INFO 7375 · all entries 2026-09-21 (one working session)
+Shreyash Yadav · INFO 7375 · two sessions: 2026-09-21 (build) and 2026-09-27 (submission check)
 
 Format follows `prerequisites/frictional.md` in the course repo. Every entry
 below is contemporaneous with the work; nothing here is a reconstructed
 timestamp. Where I am writing something up after the fact I say so.
+
+Sections 1-12 are from the build session on **2026-09-21**. Section 13 is from
+**2026-09-27**, when I re-read the Canvas page against what I had built.
 
 ---
 
@@ -331,3 +334,69 @@ the fix once I found it: one prop.
 
 Unresolved and worth returning to: whether `[+1, 0, −1]` vs `[0, −1, −1]` holds
 on a different libm (Linux/x86). Everything here is arm64 macOS.
+
+---
+
+# 2026-09-27 — checking the submission against the assignment
+
+## 13 — Two things I had wrong, found by re-reading the spec
+
+I had the package built, gated and committed, and I thought I was done. Then I
+put the Canvas assignment page side by side with the folder and read it line by
+line instead of from memory. Two real defects.
+
+**a. The GitHub path was wrong.** I had built
+`fall-2025/shreyash-y/week-01-video/`. Canvas says **`fall-2026/`**. The brief I
+had been working from said 2025 and I never re-checked it against the live page.
+
+Worth recording because the course's own documents disagree:
+`prerequisites/github-submission.md` says `fall-2025/first-name-last-initial/assignment-XX/`,
+while the Canvas assignment says `fall-2026/first-name-last-initial/week-01-video/`
+— different in **both** the year and the folder name. The assignment states
+Canvas is the authority, so I followed Canvas. Flagged for a TA rather than
+silently picked.
+
+**b. I was showing a Claude interface that could be read as a transcript.**
+This is the one that mattered. The toolkit's cold-open chassis renders the
+Claude composer, and with its default props it showed a model chip reading
+"Fable 5" and lines under the card that read like a Claude reply — for a
+conversation that **never happened**. Meanwhile my own `FACTCHECK.md` asserted
+"no Claude transcript on screen."
+
+Against the assignment's rule — *if you show a Claude response it must be a real
+one you actually got, with the date* — that was at best a risky reading, and
+having the paperwork contradict the video was worse than either alone. The
+assignment is explicit that a fabricated transcript fails on its own terms.
+
+*What I did:* blanked the model and effort chips so no model is implied,
+labelled both composer beats **RECONSTRUCTED INTERFACE** in the eyebrow, and
+rewrote the lines beneath the card to say on screen that they are quoted from
+`main.py`, **not a model reply**. Then updated `FACTCHECK.md` and `SOURCES.md`
+to describe what is actually shown rather than claim an absence.
+
+*Understand now:* "I didn't fabricate anything" and "nothing on screen can be
+read as fabricated" are different standards, and this assignment grades the
+second. I had been thinking about the rule as *don't invent a transcript* when
+it also means *don't render a UI that implies one*. A component's defaults are
+still my claims once I ship them.
+
+## 14 — What the cross-check confirmed
+
+Re-ran the evidence generator from the **pushed public repo**, on a fresh clone,
+against a fresh course checkout. Every value matched the shipped
+`evidence.json` — weights, sums, ratios, `identical_bitwise`, the ULP vectors on
+both interpreters, the overflow demo, the Neumaier probe, and the course commit
+`a0d8a1e`. Then pulled B06 and B07 out of the **shipped mp4** and read the
+digits off the frames: they match `evidence.json` exactly.
+
+That is the check I actually wanted — not "my script is deterministic" but "a
+stranger with this repo gets my numbers."
+
+## 15 — Still open
+
+- The libm question from §2 is unchanged and untested: whether the ULP
+  *positions* hold on Linux/x86. Everything here is arm64 macOS.
+- `ShreyashY` does not match `github-submission.md`'s documented lowercase
+  kebab-case convention (`shreyash-y`). Submitted as instructed; noted here.
+- The repo is public, so the reviewer-access requirement is met without
+  collaborator setup.
