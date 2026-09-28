@@ -31,3 +31,5 @@ python3 "$TOOLKIT/runtime/scripts/generate_audio_kokoro.py" "$REEL"
 echo
 echo "review cut : $REEL/$(basename "$REEL")-slate.mp4"
 echo "master     : run '$TOOLKIT/art final $REEL'"
+echo "             -> emits $(basename "$REEL").mp4 ; the submitted copy is that"
+echo "                file renamed to Yadav_Shreyash_INFO7375_Week01_Video.mp4"

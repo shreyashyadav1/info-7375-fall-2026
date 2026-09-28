@@ -95,11 +95,19 @@ toolkit bugs you will hit on a clean clone are in
 Cost to rebuild: **$0.00**. Kokoro narration, Manim and Remotion rendering, all
 local. No API keys, no paid services, no upload.
 
+**A note on the two filenames.** The toolkit names its output from the reel
+slug, so a rebuild produces `yadav-shreyash-week01-softmax-max-subtraction.mp4`
+(and a `-slate.mp4` review cut alongside it). The copy in this folder is that
+same master renamed to the Canvas convention,
+`Yadav_Shreyash_INFO7375_Week01_Video.mp4`. Same file, two naming schemes —
+the toolkit's and the assignment's.
+
 ## Files
 
 | File | What it is |
 |---|---|
-| `yadav-shreyash-week01-softmax-max-subtraction.mp4` | the video |
+| `Yadav_Shreyash_INFO7375_Week01_Video.mp4` | the video |
+| `README.md` | this file |
 | `beat_sheet.json` | narration + visual plan, one entry per beat |
 | `scenes.py` | the five Manim mechanism scenes |
 | `evidence/run_evidence.py` | generates every on-screen number |
